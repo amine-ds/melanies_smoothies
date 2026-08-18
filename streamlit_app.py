@@ -25,7 +25,7 @@ st.write("The name on your Smoothie will be :", name_on_order)
 
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'),col('SEARCH_ON'))
 pd_df=my_dataframe.to_pandas()
-st.dataframe(pd_df)
+st.dataframe(pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'])
 st.stop()
 
 ingredients_list = st.multiselect('Choose up to 5 ingredients', my_dataframe,max_selections=5)
