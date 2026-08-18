@@ -2,6 +2,8 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
+conn = st.connection("snowflake")
+
 # Write directly to the app
 st.title(f"My Parrents New Healthy Dinner")
 st.header("Breakfast Menu")
@@ -10,8 +12,8 @@ Kale, Spinach & Rocket Smoothie \n
 Hard-Boiled Free-Range Egg""")
 #option = st.selectbox('What is your favorites fruits?',('Banana','Strawberries','Peaches'))
 #st.write ('Your favorite fruit is :', option)
+my_dataframe = conn.query("SELECT * FROM smoothies.public.fruit_options;", ttl="10m")
 
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
 name_on_order = st.text_input("Name on Smoothie")
