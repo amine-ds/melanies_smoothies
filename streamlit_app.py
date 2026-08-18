@@ -3,10 +3,8 @@ import streamlit as st
 from snowflake.snowpark.functions import col
 
 # Write directly to the app
-st.title(f":cup_with_straw: Customize Your Smoothie !:cup_with_straw:")
-st.write(
-  """Choose your fruits to want in your custom smoothie !  """
-)
+st.title(f"My Parrents New Healthy Dinner")
+st.write( """Breakfast Menu  """)
 #option = st.selectbox('What is your favorites fruits?',('Banana','Strawberries','Peaches'))
 #st.write ('Your favorite fruit is :', option)
 
