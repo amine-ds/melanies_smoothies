@@ -2,7 +2,6 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 import requests  
-import pandas
 
 
 # Write directly to the app
@@ -35,7 +34,7 @@ ingredients_list = st.multiselect('Choose up to 5 ingredients', my_dataframe,max
 if ingredients_list:
     ingredients_string = ''
     for fruit_choose in ingredients_list:
-        ingredients_string+=fruit_choose+ ' '
+        ingredients_string +=fruit_choose + ' '
         
         search_on=pd_df.loc[pd_df['FRUIT_NAME'] == fruit_chosen, 'SEARCH_ON'].iloc[0]
         st.write('The search value for ', fruit_chosen,' is ', search_on, '.')
