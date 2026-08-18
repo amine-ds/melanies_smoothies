@@ -17,8 +17,8 @@ conn = st.connection("snowflake")
 session=conn.session()
 
 
-#st.dataframe(pd_df)
-#st.stop()
+st.dataframe(pd_df)
+st.stop()
 
 
 name_on_order = st.text_input("Name on Smoothie")
