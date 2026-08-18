@@ -5,8 +5,8 @@ from snowflake.snowpark.functions import col
 # Write directly to the app
 st.title(f"My Parrents New Healthy Dinner")
 st.header("Breakfast Menu")
-st.write( """Omega 3 &Blueberry Oatmeal
-Kale, Spinach & Rocket Smoothie
+st.write( """Omega 3 &Blueberry Oatmeal /n
+Kale, Spinach & Rocket Smoothie /n
 Hard-Boiled Free-Range Egg""")
 #option = st.selectbox('What is your favorites fruits?',('Banana','Strawberries','Peaches'))
 #st.write ('Your favorite fruit is :', option)
