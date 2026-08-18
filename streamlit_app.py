@@ -16,7 +16,8 @@ Hard-Boiled Free-Range Egg""")
 conn = st.connection("snowflake")
 session=conn.session()
 
-my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
+my_dataframe = session.table("smoothies.public.fruit_options").select(col('search_on'))
+st.stop()
 
 #st.dataframe(data=my_dataframe, use_container_width=True)
 
