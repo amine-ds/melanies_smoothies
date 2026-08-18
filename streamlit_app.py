@@ -2,8 +2,7 @@
 import streamlit as st
 from snowflake.snowpark.functions import col
 
-conn = st.connection("snowflake")
-session=conn.session()
+
 
 # Write directly to the app
 st.title(f"My Parrents New Healthy Dinner")
@@ -13,6 +12,10 @@ Kale, Spinach & Rocket Smoothie \n
 Hard-Boiled Free-Range Egg""")
 #option = st.selectbox('What is your favorites fruits?',('Banana','Strawberries','Peaches'))
 #st.write ('Your favorite fruit is :', option)
+
+conn = st.connection("snowflake")
+session=conn.session()
+
 my_dataframe = session.table("smoothies.public.fruit_options").select(col('FRUIT_NAME'))
 
 #st.dataframe(data=my_dataframe, use_container_width=True)
